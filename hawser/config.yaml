@@ -1,6 +1,6 @@
 name: Hawser Agent
 slug: hawser
-version: "1.1.7"
+version: "1.2.0-rc1"
 description: Hawser agent for Dockhand (Edge mode)
 
 arch:
@@ -9,18 +9,15 @@ arch:
 
 startup: services
 boot: auto
+docker_api: true
+full_access: true
 
-
-# 🔴 FORMAT HA 2026 (LISTE OBLIGATOIRE)
 privileged:
   - SYS_ADMIN
 
-# ⚠️ map docker_socket ignoré en 2026 → on l’enlève
-# map:
-#   - docker_socket
-
 host_network: false
-
+ports:
+  2376/tcp: 2376
 
 options:
   dockhand_server_url: ""
