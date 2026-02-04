@@ -1,33 +1,25 @@
 name: Hawser Agent
 slug: hawser
 version: "1.2.0-rc1"
-description: Hawser agent for Dockhand (Edge mode)
-
+description: Hawser agent for Dockhand (Standard mode)
+startup: services
+boot: auto
 arch:
   - amd64
   - aarch64
-
-startup: services
-boot: auto
-hassio_api: true
-auth_api: true
-docker_api: true
-host_pid: true
-apparmor: false
-host_network: false
-
 init: false
 homeassistant_api: false
+host_network: true
 privileged:
   - SYS_ADMIN
-
+docker_api: true
 ports:
   2376/tcp: 2376
 
-options:
-  dockhand_server_url: ""
-  token: ""
+# options:
+#   dockhand_server_url: ""
+#   token: ""
 
-schema:
-  dockhand_server_url: str
-  token: password
+# schema:
+#   dockhand_server_url: str
+#   token: password
