@@ -9,12 +9,11 @@ arch:
 
 startup: services
 boot: auto
+hassio_api: true
+auth_api: true
 docker_api: true
-full_access: true
-
-privileged:
-  - SYS_ADMIN
-
+host_pid: true
+apparmor: false
 host_network: false
 ports:
   2376/tcp: 2376
