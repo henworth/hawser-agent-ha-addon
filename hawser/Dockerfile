@@ -3,5 +3,5 @@ FROM ${BUILD_FROM}
 
 COPY run.sh /run.sh
 
-DOCKER_HOST=tcp://172.30.32.1:2375
+ENV DOCKER_HOST=tcp://172.30.32.1:2375
 CMD [ "/run.sh" ]
