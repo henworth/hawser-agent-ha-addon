@@ -15,6 +15,12 @@ docker_api: true
 host_pid: true
 apparmor: false
 host_network: false
+
+init: false
+homeassistant_api: false
+privileged:
+  - SYS_ADMIN
+
 ports:
   2376/tcp: 2376
 
